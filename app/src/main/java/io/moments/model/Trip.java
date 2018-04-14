@@ -13,9 +13,9 @@ import lombok.Setter;
 @Builder
 public class Trip {
 
-    private int TripId;
-    private String Title;
-    private String Description;
+    private int tripId;
+    private String title;
+    private String description;
     private int image;
 
     //TODO replace with real service call
@@ -24,21 +24,21 @@ public class Trip {
         List<Trip> trips = new ArrayList<>();
 
         trips.add(Trip.builder()
-                .TripId(1)
-                .Title("Trip 1")
-                .Description(getDummyDescription()).image(R.drawable.hol1)
+                .tripId(1)
+                .title("Trip 1")
+                .description(getDummyDescription()).image(R.drawable.hol1)
                 .build());
 
         trips.add(Trip.builder()
-                .TripId(2)
-                .Title("Trip 2")
-                .Description(getDummyDescription()).image(R.drawable.hol2)
+                .tripId(2)
+                .title("Trip 2")
+                .description(getDummyDescription()).image(R.drawable.hol2)
                 .build());
 
         trips.add(Trip.builder()
-                .TripId(3)
-                .Title("Trip 3")
-                .Description(getDummyDescription()).image(R.drawable.hol3)
+                .tripId(3)
+                .title("Trip 3")
+                .description(getDummyDescription()).image(R.drawable.hol3)
                 .build());
 
         return trips;

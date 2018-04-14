@@ -48,12 +48,93 @@
                 android:layout_height="wrap_content"
                 android:id="@+id/journal_entry_title"
                 android:textStyle="bold"
-                android:textSize="16sp"
+                android:textSize="12sp"
                 android:layout_marginBottom="5dp"
                 android:layout_marginTop="5dp"
                 android:layout_toEndOf="@+id/journal_entry_image"
                 android:text="My awesome day at the beach"
                 />
+
+            <LinearLayout
+                android:id="@+id/journal_entry_meta"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:layout_marginBottom="3dp"
+                android:weightSum="3"
+                android:layout_toEndOf="@+id/journal_entry_image"
+                android:layout_below="@+id/journal_entry_title">
+                <!--LOCATION-->
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="-2dp"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_gravity="center"
+                        android:layout_marginStart="0dp"
+                        android:src="@drawable/ic_location_black_24dp"
+                        android:tint="@android:color/holo_blue_dark" />
+                    git <TextView
+                        android:id="@+id/journal_entry_meta_location"
+                        android:layout_width="fill_parent"
+                        android:layout_height="wrap_content"
+                        android:maxLines="1"
+                        android:textSize="10sp"
+                        android:layout_gravity="center"
+                        android:text="Northern Toronto, Canada"
+                        android:ellipsize="end"
+                        />
+                </LinearLayout>
+
+                <!--WEATHER-->
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:tint="@android:color/holo_blue_dark"
+                        android:src="@drawable/ic_weather_black_24dp"/>
+                    <TextView
+                        android:id="@+id/journal_entry_meta_weather"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textSize="10dp"
+                        android:layout_gravity="center_vertical"
+                        android:text="Sunny 8C"
+                        />
+                </LinearLayout>
+
+                <!--ACTIVITY-->
+                <LinearLayout
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="5dp"
+                    android:layout_weight="1">
+                    <ImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:tint="@android:color/holo_blue_dark"
+                        android:src="@drawable/ic_activity_walk_24dp"/>
+                    <TextView
+                        android:id="@+id/journal_entry_meta_activity"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:maxLines="1"
+                        android:textSize="10sp"
+                        android:layout_gravity="center_vertical"
+                        android:text="Walking"
+                        />
+                </LinearLayout>
+            </LinearLayout>
 
             <TextView
                 android:layout_width="match_parent"
@@ -62,12 +143,15 @@
                 android:textSize="12sp"
                 android:layout_marginBottom="5dp"
                 android:layout_toEndOf="@+id/journal_entry_image"
-                android:layout_below="@+id/journal_entry_title"
+                android:layout_below="@+id/journal_entry_meta"
                 android:layout_alignBottom="@id/journal_entry_image"
+                android:scrollHorizontally="true"
                 android:ellipsize="end"
-                android:maxLines="4"
+                android:maxLines="3"
                 android:text="Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur malesuada eu justo a ornare. Praesent risus lorem, commodo vitae tincidunt nec, bibendum ac nunc. Praesent quis sem neque. Phasellus ultrices velit sit amet purus hendrerit, quis auctor est finibus. Etiam et neque arcu. Curabitur scelerisque, augue quis accumsan consequat,"
                 />
+
+
 
         </RelativeLayout>
     </android.support.v7.widget.CardView>

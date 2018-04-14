@@ -19,7 +19,6 @@ import io.moments.R;
 import io.moments.adapter.TabPagerAdapter;
 import io.moments.fragment.JournalFragment;
 import io.moments.fragment.TripsFragment;
-import io.moments.fragment.dummy.DummyContent;
 import io.moments.model.JournalEntry;
 import io.moments.model.Trip;
 

@@ -12,10 +12,7 @@ import android.view.ViewGroup;
 
 import io.moments.R;
 import io.moments.adapter.JournalRecyclerViewAdapter;
-import io.moments.fragment.dummy.DummyContent;
-import io.moments.fragment.dummy.DummyContent.DummyItem;
 import io.moments.model.JournalEntry;
-import io.moments.model.Trip;
 
 public class JournalFragment extends Fragment {
 

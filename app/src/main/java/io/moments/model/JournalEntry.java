@@ -1,5 +1,6 @@
 package io.moments.model;
 
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -17,6 +18,10 @@ public class JournalEntry {
     private int image;
     private String title;
     private String description;
+    private String location;
+    private String weather;
+    private LocalDateTime date;
+    private String activity;
 
     public static List<JournalEntry> getDummyJournalEntrys() {
 
@@ -24,19 +29,28 @@ public class JournalEntry {
 
         journalEntries.add(JournalEntry.builder()
                 .journalEntryId(1)
-                .title("Trip 1")
+                .title("My awesome day at Toronto coast")
                 .description(getDummyDescription()).image(R.drawable.hol1)
+                .location("Nothern Toronto, Canada")
+                .weather("Sunny 10C")
+                .activity("Walking")
                 .build());
 
         journalEntries.add(JournalEntry.builder()
                 .journalEntryId(1)
-                .title("Trip 2")
+                .title("Stumbled upon an amazing castle!!")
+                .location("Barcelona, Spain")
+                .weather("Hot 24C")
+                .activity("Exploring")
                 .description(getDummyDescription()).image(R.drawable.hol2)
                 .build());
 
         journalEntries.add(JournalEntry.builder()
                 .journalEntryId(1)
-                .title("Trip 3")
+                .title("Bali Beach is beautiful")
+                .location("Bali, Indonesia")
+                .weather("Clear 15C")
+                .activity("Hiking")
                 .description(getDummyDescription()).image(R.drawable.hol3)
                 .build());
 
@@ -44,7 +58,7 @@ public class JournalEntry {
     }
 
     private static String getDummyDescription(){
-        return "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam bibendum justo tincidunt est mattis porttitor.";
+        return "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam bibendum justo tincidunt est mattis porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam bibendum justo tincidunt est mattis porttitor. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam bibendum justo tincidunt est mattis porttitor.";
     }
 
 }
