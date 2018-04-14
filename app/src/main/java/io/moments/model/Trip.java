@@ -18,6 +18,7 @@ public class Trip {
     private String Description;
     private int image;
 
+    //TODO replace with real service call
     public static List<Trip> getDummyTrips() {
 
         List<Trip> trips = new ArrayList<>();

@@ -20,6 +20,7 @@ import io.moments.adapter.TabPagerAdapter;
 import io.moments.fragment.JournalFragment;
 import io.moments.fragment.TripsFragment;
 import io.moments.fragment.dummy.DummyContent;
+import io.moments.model.JournalEntry;
 import io.moments.model.Trip;
 
 public class MainActivity extends AppCompatActivity
@@ -129,7 +130,7 @@ public class MainActivity extends AppCompatActivity
     }
 
     @Override
-    public void onListFragmentInteraction(DummyContent.DummyItem trip) {
+    public void onListFragmentInteraction(JournalEntry journalEntry) {
 
     }
 }

@@ -14,6 +14,7 @@ import io.moments.R;
 import io.moments.adapter.JournalRecyclerViewAdapter;
 import io.moments.fragment.dummy.DummyContent;
 import io.moments.fragment.dummy.DummyContent.DummyItem;
+import io.moments.model.JournalEntry;
 import io.moments.model.Trip;
 
 public class JournalFragment extends Fragment {
@@ -46,7 +47,7 @@ public class JournalFragment extends Fragment {
             } else {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
-            recyclerView.setAdapter(new JournalRecyclerViewAdapter(DummyContent.ITEMS, mListener));
+            recyclerView.setAdapter(new JournalRecyclerViewAdapter(JournalEntry.getDummyJournalEntrys(), mListener));
         }
         return view;
     }
@@ -71,6 +72,6 @@ public class JournalFragment extends Fragment {
 
     public interface OnListFragmentInteractionListener {
         // TODO: Update argument type and name
-        void onListFragmentInteraction(DummyItem trip);
+        void onListFragmentInteraction(JournalEntry trip);
     }
 }

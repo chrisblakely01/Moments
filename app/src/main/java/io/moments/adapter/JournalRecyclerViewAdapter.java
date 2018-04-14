@@ -4,20 +4,22 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import io.moments.R;
 import io.moments.fragment.JournalFragment.OnListFragmentInteractionListener;
 import io.moments.fragment.dummy.DummyContent.DummyItem;
+import io.moments.model.JournalEntry;
 
 import java.util.List;
 
 public class JournalRecyclerViewAdapter extends RecyclerView.Adapter<JournalRecyclerViewAdapter.ViewHolder> {
 
-    private final List<DummyItem> mValues;
+    private final List<JournalEntry> mValues;
     private final OnListFragmentInteractionListener mListener;
 
-    public JournalRecyclerViewAdapter(List<DummyItem> items, OnListFragmentInteractionListener listener) {
+    public JournalRecyclerViewAdapter(List<JournalEntry> items, OnListFragmentInteractionListener listener) {
         mValues = items;
         mListener = listener;
     }
@@ -32,9 +34,9 @@ public class JournalRecyclerViewAdapter extends RecyclerView.Adapter<JournalRecy
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int position) {
         holder.mItem = mValues.get(position);
-        holder.mIdView.setText(mValues.get(position).id);
-        holder.mContentView.setText(mValues.get(position).content);
-
+        holder.mTitleView.setText(mValues.get(position).getTitle());
+        holder.mDescriptionView.setText(mValues.get(position).getDescription());
+        holder.mImageView.setImageResource(mValues.get(position).getImage());
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -54,20 +56,22 @@ public class JournalRecyclerViewAdapter extends RecyclerView.Adapter<JournalRecy
 
     public class ViewHolder extends RecyclerView.ViewHolder {
         public final View mView;
-        public final TextView mIdView;
-        public final TextView mContentView;
-        public DummyItem mItem;
+        public final TextView mTitleView;
+        public final ImageView mImageView;
+        public final TextView mDescriptionView;
+        public JournalEntry mItem;
 
         public ViewHolder(View view) {
             super(view);
             mView = view;
-            mIdView = (TextView) view.findViewById(R.id.id);
-            mContentView = (TextView) view.findViewById(R.id.content);
+            mTitleView = view.findViewById(R.id.journal_entry_title);
+            mImageView = view.findViewById(R.id.journal_entry_image);
+            mDescriptionView = view.findViewById(R.id.journal_entry_description);
         }
 
         @Override
         public String toString() {
-            return super.toString() + " '" + mContentView.getText() + "'";
+            return super.toString();
         }
     }
 }
