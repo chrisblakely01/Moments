@@ -15,6 +15,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import io.moments.R;
 import io.moments.adapter.TabPagerAdapter;
 import io.moments.fragment.JournalFragment;
@@ -48,6 +51,10 @@ public class MainActivity extends AppCompatActivity
 
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabs);
         tabLayout.setupWithViewPager(viewPager);
+
+        for (int i = 0; i < tabLayout.getTabCount(); i++) {
+            tabLayout.getTabAt(i).setIcon(getTabIcons().get(i));
+        }
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -116,13 +123,6 @@ public class MainActivity extends AppCompatActivity
         return true;
     }
 
-    private void setupViewPager(ViewPager viewPager) {
-        TabPagerAdapter adapter = new TabPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new JournalFragment(), "Journal");
-        adapter.addFragment(new TripsFragment(), "Trips");
-        viewPager.setAdapter(adapter);
-    }
-
     @Override
     public void onListFragmentInteraction(Trip trip) {
 
@@ -132,4 +132,26 @@ public class MainActivity extends AppCompatActivity
     public void onListFragmentInteraction(JournalEntry journalEntry) {
 
     }
+
+    private void setupViewPager(ViewPager viewPager) {
+        TabPagerAdapter adapter = new TabPagerAdapter(getSupportFragmentManager());
+        adapter.addFragment(new JournalFragment(), "Journal");
+        adapter.addFragment(new TripsFragment(), "Trips");
+        adapter.addFragment(new JournalFragment(), "Journal");
+        adapter.addFragment(new TripsFragment(), "Trips");
+        viewPager.setAdapter(adapter);
+    }
+
+    private List<Integer> getTabIcons(){
+        List<Integer> icons = new ArrayList<>();
+
+        icons.add(R.drawable.ic_journal_24dp);
+        icons.add(R.drawable.ic_moment_24dp);
+        icons.add(R.drawable.ic_gallery_24dp);
+        icons.add(R.drawable.ic_map_24dp);
+
+        return icons;
+
+    }
+
 }

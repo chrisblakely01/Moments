@@ -32,15 +32,15 @@ public class JournalEntry {
                 .title("My awesome day at Toronto coast")
                 .description(getDummyDescription()).image(R.drawable.hol1)
                 .location("Nothern Toronto, Canada")
-                .weather("Sunny 10C")
-                .activity("Walking")
+                //.weather("10C")
+                //.activity("Walking")
                 .build());
 
         journalEntries.add(JournalEntry.builder()
                 .journalEntryId(1)
                 .title("Stumbled upon an amazing castle!!")
                 .location("Barcelona, Spain")
-                .weather("Hot 24C")
+                .weather("24C")
                 .activity("Exploring")
                 .description(getDummyDescription()).image(R.drawable.hol2)
                 .build());
@@ -49,8 +49,7 @@ public class JournalEntry {
                 .journalEntryId(1)
                 .title("Bali Beach is beautiful")
                 .location("Bali, Indonesia")
-                .weather("Clear 15C")
-                .activity("Hiking")
+                .weather("15C")
                 .description(getDummyDescription()).image(R.drawable.hol3)
                 .build());
 

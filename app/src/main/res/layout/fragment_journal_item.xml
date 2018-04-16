@@ -43,6 +43,91 @@
                 android:src="@drawable/hol1"
                 app:civ_border_width="0dp"/>
 
+
+            <!--TODO find where to put this in layout
+            <LinearLayout-->
+                <!--android:id="@+id/journal_entry_meta_side"-->
+                <!--android:layout_width="fill_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:orientation="horizontal"-->
+                <!--android:layout_marginBottom="3dp"-->
+                <!--android:weightSum="3"-->
+                <!--android:layout_marginStart="10dp"-->
+                <!--android:layout_marginEnd="10dp"-->
+                <!--android:gravity="center"-->
+                <!--android:layout_below="@+id/journal_entry_image"-->
+                <!--android:layout_toStartOf="@id/journal_entry_description">-->
+                <!--&lt;!&ndash;WEATHER&ndash;&gt;-->
+                <!--<LinearLayout-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginStart="5dp"-->
+                    <!--android:layout_weight="1">-->
+                    <!--<ImageView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:tint="@android:color/holo_blue_dark"-->
+                        <!--android:src="@drawable/ic_weather_black_24dp"/>-->
+                    <!--<TextView-->
+                        <!--android:id="@+id/journal_entry_meta_weather"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:ellipsize="end"-->
+                        <!--android:maxLines="1"-->
+                        <!--android:textSize="10dp"-->
+                        <!--android:layout_gravity="center_vertical"-->
+                        <!--android:text="8C"-->
+                        <!--/>-->
+                <!--</LinearLayout>-->
+
+                <!--&lt;!&ndash;Temperature&ndash;&gt;-->
+                <!--<LinearLayout-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginStart="5dp"-->
+                    <!--android:layout_weight="1">-->
+                    <!--<ImageView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:tint="@android:color/holo_blue_dark"-->
+                        <!--android:src="@drawable/ic_weather_black_24dp"/>-->
+                    <!--<TextView-->
+                        <!--android:id="@+id/journal_entry_meta_temperature"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:ellipsize="end"-->
+                        <!--android:maxLines="1"-->
+                        <!--android:textSize="10dp"-->
+                        <!--android:layout_gravity="center_vertical"-->
+                        <!--android:text=""-->
+                        <!--/>-->
+                <!--</LinearLayout>-->
+
+                <!--&lt;!&ndash;ACTIVITY&ndash;&gt;-->
+                <!--<LinearLayout-->
+                    <!--android:layout_width="0dp"-->
+                    <!--android:layout_height="wrap_content"-->
+                    <!--android:layout_marginStart="5dp"-->
+                    <!--android:layout_weight="1">-->
+                    <!--<ImageView-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="match_parent"-->
+                        <!--android:tint="@android:color/holo_blue_dark"-->
+                        <!--android:src="@drawable/ic_activity_walk_24dp"/>-->
+                    <!--<TextView-->
+                        <!--android:id="@+id/journal_entry_meta_activity"-->
+                        <!--android:layout_width="wrap_content"-->
+                        <!--android:layout_height="wrap_content"-->
+                        <!--android:ellipsize="end"-->
+                        <!--android:maxLines="1"-->
+                        <!--android:textSize="10sp"-->
+                        <!--android:layout_gravity="center_vertical"-->
+                        <!--android:text=""-->
+                        <!--/>-->
+                <!--</LinearLayout>-->
+            <!--</LinearLayout>-->
+
+
             <TextView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
@@ -56,17 +141,16 @@
                 />
 
             <LinearLayout
-                android:id="@+id/journal_entry_meta"
-                android:layout_width="match_parent"
+                android:id="@+id/journal_entry_meta_main"
+                android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:orientation="horizontal"
                 android:layout_marginBottom="3dp"
-                android:weightSum="3"
                 android:layout_toEndOf="@+id/journal_entry_image"
                 android:layout_below="@+id/journal_entry_title">
                 <!--LOCATION-->
                 <LinearLayout
-                    android:layout_width="fill_parent"
+                    android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="-2dp"
                     android:layout_weight="1">
@@ -77,61 +161,14 @@
                         android:layout_marginStart="0dp"
                         android:src="@drawable/ic_location_black_24dp"
                         android:tint="@android:color/holo_blue_dark" />
-                    git <TextView
+                    <TextView
                         android:id="@+id/journal_entry_meta_location"
                         android:layout_width="fill_parent"
-                        android:layout_height="wrap_content"
-                        android:maxLines="1"
+                        android:layout_height="fill_parent"
                         android:textSize="10sp"
                         android:layout_gravity="center"
                         android:text="Northern Toronto, Canada"
                         android:ellipsize="end"
-                        />
-                </LinearLayout>
-
-                <!--WEATHER-->
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_weight="1">
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:tint="@android:color/holo_blue_dark"
-                        android:src="@drawable/ic_weather_black_24dp"/>
-                    <TextView
-                        android:id="@+id/journal_entry_meta_weather"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ellipsize="end"
-                        android:maxLines="1"
-                        android:textSize="10dp"
-                        android:layout_gravity="center_vertical"
-                        android:text="Sunny 8C"
-                        />
-                </LinearLayout>
-
-                <!--ACTIVITY-->
-                <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:layout_marginStart="5dp"
-                    android:layout_weight="1">
-                    <ImageView
-                        android:layout_width="wrap_content"
-                        android:layout_height="match_parent"
-                        android:tint="@android:color/holo_blue_dark"
-                        android:src="@drawable/ic_activity_walk_24dp"/>
-                    <TextView
-                        android:id="@+id/journal_entry_meta_activity"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:ellipsize="end"
-                        android:maxLines="1"
-                        android:textSize="10sp"
-                        android:layout_gravity="center_vertical"
-                        android:text="Walking"
                         />
                 </LinearLayout>
             </LinearLayout>
@@ -143,8 +180,8 @@
                 android:textSize="12sp"
                 android:layout_marginBottom="5dp"
                 android:layout_toEndOf="@+id/journal_entry_image"
-                android:layout_below="@+id/journal_entry_meta"
-                android:layout_alignBottom="@id/journal_entry_image"
+                android:layout_below="@+id/journal_entry_meta_main"
+                android:layout_alignBottom="@id/journal_entry_description"
                 android:scrollHorizontally="true"
                 android:ellipsize="end"
                 android:maxLines="3"

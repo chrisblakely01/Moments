@@ -14,6 +14,7 @@ import io.moments.model.JournalEntry;
 
 import java.util.List;
 
+//TODO reinitialise the meta data when I've decided on the layout
 public class JournalRecyclerViewAdapter extends RecyclerView.Adapter<JournalRecyclerViewAdapter.ViewHolder> {
 
     private final List<JournalEntry> mValues;
@@ -38,8 +39,8 @@ public class JournalRecyclerViewAdapter extends RecyclerView.Adapter<JournalRecy
         holder.mDescriptionView.setText(mValues.get(position).getDescription());
         holder.mImageView.setImageResource(mValues.get(position).getImage());
         holder.mLocation.setText(mValues.get(position).getLocation());
-        holder.mWeather.setText(mValues.get(position).getWeather());
-        holder.mActivity.setText(mValues.get(position).getActivity());
+//        holder.mWeather.setText(mValues.get(position).getWeather());
+//        holder.mActivity.setText(mValues.get(position).getActivity());
         holder.mView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -65,8 +66,8 @@ public class JournalRecyclerViewAdapter extends RecyclerView.Adapter<JournalRecy
         public final ImageView mImageView;
         public final TextView mDescriptionView;
         public final TextView mLocation;
-        public final TextView mWeather;
-        public final TextView mActivity;
+//        public final TextView mWeather;
+//        public final TextView mActivity;
 
         public JournalEntry mItem;
 
@@ -77,8 +78,8 @@ public class JournalRecyclerViewAdapter extends RecyclerView.Adapter<JournalRecy
             mImageView = view.findViewById(R.id.journal_entry_image);
             mDescriptionView = view.findViewById(R.id.journal_entry_description);
             mLocation = view.findViewById(R.id.journal_entry_meta_location);
-            mWeather = view.findViewById(R.id.journal_entry_meta_weather);
-            mActivity = view.findViewById(R.id.journal_entry_meta_activity);
+//            mWeather = view.findViewById(R.id.journal_entry_meta_weather);
+//            mActivity = view.findViewById(R.id.journal_entry_meta_activity);
         }
 
         @Override
