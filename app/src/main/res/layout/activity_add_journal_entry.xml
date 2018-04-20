@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="io.moments.activity.AddJournalEntryActivity">
+
+    <EditText
+        android:id="@+id/journal_entry_edit_main_text"
+        android:layout_width="391dp"
+        android:layout_height="523dp"
+        android:hint="Add journal entry here ..."
+        android:gravity="top"
+        android:background="@android:color/transparent"
+        />
+
+    <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:card_view="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:layout_marginStart="10dp"
+        android:layout_marginEnd="10dp"
+        android:layout_marginBottom="10dp"
+        card_view:cardBackgroundColor="@android:color/holo_blue_light"
+        card_view:cardCornerRadius="15dp"
+        card_view:cardElevation="1dp"
+        card_view:contentPadding="0dp">
+        <android.support.v7.widget.LinearLayoutCompat
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:gravity="center"
+            android:weightSum="4">
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_journal_24dp"
+                android:tint="@android:color/white"
+                android:layout_weight="1"/>
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_location_black_24dp"
+                android:tint="@android:color/white"
+                android:layout_weight="1"/>
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:src="@drawable/ic_insert_emoticon_24dp"
+                android:tint="@android:color/white"
+                android:layout_weight="1"/>
+            <android.support.v7.widget.AppCompatImageView
+                android:layout_width="24dp"
+                android:layout_height="24dp"
+                android:layout_marginStart="5dp"
+                android:src="@drawable/ic_gallery_24dp"
+                android:tint="@android:color/white"
+                android:layout_weight="1"/>
+        </android.support.v7.widget.LinearLayoutCompat>
+    </android.support.v7.widget.CardView>
+
+
+    <android.support.design.widget.FloatingActionButton
+        android:id="@+id/fab_save_journal_entry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="top|end"
+        android:layout_margin="@dimen/fab_margin"
+        app:backgroundTint="@android:color/holo_blue_light"
+        app:srcCompat="@drawable/ic_send_24dp"
+        android:tint="@android:color/white"
+        />
+
+</android.support.design.widget.CoordinatorLayout>

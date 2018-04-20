@@ -1,5 +1,7 @@
 package io.moments.activity;
 
+import android.content.Context;
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -41,8 +43,9 @@ public class MainActivity extends AppCompatActivity
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                Context context = view.getContext();
+                Intent intent = new Intent(context, AddJournalEntryActivity.class);
+                context.startActivity(intent);
             }
         });
 
@@ -135,8 +138,6 @@ public class MainActivity extends AppCompatActivity
 
     private void setupViewPager(ViewPager viewPager) {
         TabPagerAdapter adapter = new TabPagerAdapter(getSupportFragmentManager());
-        adapter.addFragment(new JournalFragment(), "Journal");
-        adapter.addFragment(new TripsFragment(), "Trips");
         adapter.addFragment(new JournalFragment(), "Journal");
         adapter.addFragment(new TripsFragment(), "Trips");
         viewPager.setAdapter(adapter);

@@ -1,7 +1,12 @@
 package io.moments.adapter;
 
+import android.app.Activity;
+import android.content.Context;
+import android.content.Intent;
 import android.support.design.widget.Snackbar;
+import android.support.v7.widget.CardView;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,6 +14,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import io.moments.R;
+import io.moments.activity.AddJournalEntryActivity;
 import io.moments.fragment.JournalFragment.OnListFragmentInteractionListener;
 import io.moments.model.JournalEntry;
 
@@ -19,10 +25,12 @@ public class JournalRecyclerViewAdapter extends RecyclerView.Adapter<JournalRecy
 
     private final List<JournalEntry> mValues;
     private final OnListFragmentInteractionListener mListener;
+    private final Activity mActivity;
 
-    public JournalRecyclerViewAdapter(List<JournalEntry> items, OnListFragmentInteractionListener listener) {
+    public JournalRecyclerViewAdapter(List<JournalEntry> items, OnListFragmentInteractionListener listener, Activity activity) {
         mValues = items;
         mListener = listener;
+        mActivity = activity;
     }
 
     @Override
@@ -41,16 +49,14 @@ public class JournalRecyclerViewAdapter extends RecyclerView.Adapter<JournalRecy
         holder.mLocation.setText(mValues.get(position).getLocation());
 //        holder.mWeather.setText(mValues.get(position).getWeather());
 //        holder.mActivity.setText(mValues.get(position).getActivity());
-        holder.mView.setOnClickListener(new View.OnClickListener() {
+        holder.mCardView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                if (null != mListener) {
-                    // Notify the active callbacks interface (the activity, if the
-                    // fragment is attached to one) that an item has been selected.
-                    Snackbar.make(v, "Item clicked: " + holder.mItem.getTitle(), Snackbar.LENGTH_LONG)
-                            .setAction("Action", null).show();
-                    mListener.onListFragmentInteraction(holder.mItem);
-                }
+//                Context context = v.getContext();
+//                Intent intent = new Intent(context, AddJournalEntryActivity.class);
+//                context.startActivity(intent);
+                Snackbar.make(v, "item clicked: " + holder.mTitleView.getText(), Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
             }
         });
     }
@@ -60,7 +66,8 @@ public class JournalRecyclerViewAdapter extends RecyclerView.Adapter<JournalRecy
         return mValues.size();
     }
 
-    public class ViewHolder extends RecyclerView.ViewHolder {
+    public class ViewHolder extends RecyclerView.ViewHolder{
+        public final CardView mCardView;
         public final View mView;
         public final TextView mTitleView;
         public final ImageView mImageView;
@@ -73,6 +80,7 @@ public class JournalRecyclerViewAdapter extends RecyclerView.Adapter<JournalRecy
 
         public ViewHolder(View view) {
             super(view);
+            mCardView = view.findViewById(R.id.trips_cv);
             mView = view;
             mTitleView = view.findViewById(R.id.journal_entry_title);
             mImageView = view.findViewById(R.id.journal_entry_image);

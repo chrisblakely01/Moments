@@ -3,6 +3,7 @@ package io.moments.fragment;
 import android.content.Context;
 import android.graphics.Canvas;
 import android.os.Bundle;
+import android.support.design.widget.Snackbar;
 import android.support.v4.app.Fragment;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.GridLayoutManager;
@@ -47,7 +48,8 @@ public class JournalFragment extends Fragment {
                 recyclerView.setLayoutManager(new GridLayoutManager(context, mColumnCount));
             }
 
-            recyclerView.setAdapter(new JournalRecyclerViewAdapter(JournalEntry.getDummyJournalEntrys(), mListener));
+            recyclerView.setAdapter(new JournalRecyclerViewAdapter(JournalEntry.getDummyJournalEntrys(), mListener, this.getActivity()));
+
         }
         return view;
     }
