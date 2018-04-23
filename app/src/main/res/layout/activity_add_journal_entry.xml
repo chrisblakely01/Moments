@@ -6,14 +6,22 @@
     android:layout_height="match_parent"
     tools:context="io.moments.activity.AddJournalEntryActivity">
 
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/add_journal_entry_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"/>
+
     <EditText
         android:id="@+id/journal_entry_edit_main_text"
-        android:layout_width="391dp"
+        android:layout_width="match_parent"
         android:layout_height="523dp"
-        android:hint="Add journal entry here ..."
-        android:gravity="top"
         android:background="@android:color/transparent"
-        />
+        android:gravity="top"
+        android:hint="Add journal entry here ..." />
 
     <android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
         xmlns:card_view="http://schemas.android.com/apk/res-auto"
@@ -26,7 +34,7 @@
         android:layout_marginBottom="10dp"
         card_view:cardBackgroundColor="@android:color/holo_blue_light"
         card_view:cardCornerRadius="15dp"
-        card_view:cardElevation="1dp"
+        card_view:cardElevation="4dp"
         card_view:contentPadding="0dp">
         <android.support.v7.widget.LinearLayoutCompat
             android:layout_width="match_parent"
@@ -63,15 +71,15 @@
     </android.support.v7.widget.CardView>
 
 
-    <android.support.design.widget.FloatingActionButton
-        android:id="@+id/fab_save_journal_entry"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="top|end"
-        android:layout_margin="@dimen/fab_margin"
-        app:backgroundTint="@android:color/holo_blue_light"
-        app:srcCompat="@drawable/ic_send_24dp"
-        android:tint="@android:color/white"
-        />
+    <!--<android.support.design.widget.FloatingActionButton-->
+        <!--android:id="@+id/fab_save_journal_entry"-->
+        <!--android:layout_width="wrap_content"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_gravity="top|end"-->
+        <!--android:layout_margin="@dimen/fab_margin"-->
+        <!--app:backgroundTint="@android:color/holo_blue_light"-->
+        <!--app:srcCompat="@drawable/ic_send_24dp"-->
+        <!--android:tint="@android:color/white"-->
+        <!--/>-->
 
 </android.support.design.widget.CoordinatorLayout>
